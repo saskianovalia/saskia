@@ -34,17 +34,17 @@ class _DiceRollerState extends State<DiceRoller> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Image.asset(
-              'asset/dice-$currentDiceRoll1.png',
+              'assets/dice-$currentDiceRoll1.png',
               width: 100,
             ),
             SizedBox(width: 20),
             Image.asset(
-              'asset/dice-$currentDiceRoll2.png',
+              'assets/dice-$currentDiceRoll2.png',
               width: 100,
             ),
             SizedBox(width: 20),
             Image.asset(
-              'asset/dice-$currentDiceRoll2.png',
+              'assets/dice-$currentDiceRoll2.png',
               width: 100,
             ),
           ],

@@ -1,51 +1,40 @@
-import 'package:acakdadu/styled_text.dart';
+import 'package:acakdadu/dice_roller.dart';
 import 'package:flutter/material.dart';
 
-class GradientContainer extends StatelessWidget{
-  //conststructur function, pada saat menampilkan gradient container color1 color2 autu diterapkan
-  GradientContainer(this.color1, this.color2, {super.key});
+// Konstanta untuk posisi awal dan akhir gradient
+const startAlignment = Alignment.topLeft; // Posisi awal gradient di pojok kiri atas
+const endAlignment = Alignment.bottomRight; // Posisi akhir gradient di pojok kanan bawah
 
-  final Color color1;//membuat variable bertipe Color dengan color1
-  final Color color2;//membuat variable bertipe Color dengan color2
- 
- 
-  // fungsu acakDadu yang di panggil ketika button di panggil
-  void acakDadu(){
-  var activeDiceImage = 'assets/image/dice-2.png';
-}
-  
+// Kelas GradientContainer untuk membuat container dengan gradient
+class GradientContainer extends StatelessWidget {
+  // Konstruktor untuk membuat objek GradientContainer
+  const GradientContainer(this.color1, this.color2, {super.key});
+
+  // Variabel untuk warna pertama dan kedua gradient
+  final Color color1; // Warna pertama gradient
+  final Color color2; // Warna kedua gradient
 
   @override
-  Widget build(context){
+  // Fungsi untuk membuat widget
+  Widget build(context) {
+    // Membuat container dengan gradient
     return Container(
+      // Dekorasi untuk container 
       decoration: BoxDecoration(
+        // Membuat gradient
         gradient: LinearGradient(
-        colors: [color1, color2],
-        begin: Alignment.topLeft,
-        end: Alignment.bottomRight,
-        )
-      ),
-      child: Center(
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            Image.asset(
-              'assets/images/dice-3.png',
-              width: 200,
-            ),
-            TextButton(
-              onPressed:acakDadu,
-              style: TextButton.styleFrom(
-                padding: const EdgeInsets.only(
-                  top: 20,
-                ),
-                foregroundColor: Colors.white,
-                textStyle: const TextStyle(fontSize: 28),
-              ),
-              child: const Text('Roll Dice!'),
-            ),
-          ]
+          // Daftar warna untuk gradient
+          colors: [color1, color2],
+          // Posisi awal gradient
+          begin: startAlignment,
+          // Posisi akhir gradient
+          end: endAlignment,
         ),
+      ),
+      // Anak widget dari container
+      child: Center(
+        // Membuat widget DiceRoller di tengah-tengah container
+        child: DiceRoller(),
       ),
     );
   }
